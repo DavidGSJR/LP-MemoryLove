@@ -1,0 +1,496 @@
+:root {
+    --primary: #ff6b6b;
+    --secondary: #4ecdc4;
+    --accent: #ffd166;
+    --dark-accent: #6a0572;
+    --light-bg: #f8f9fa;
+    --light-gray: #e9ecef;
+    --dark: #343a40;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: linear-gradient(
+        135deg,
+        var(--primary) 0%,
+        var(--dark-accent) 100%
+    );
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-family: "Handlee", cursive;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.download-btn:hover {
+    background-color: var(--dark-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(106, 5, 114, 0.4);
+}
+
+.features {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.section-title {
+    text-align: center;
+    font-family: "Handlee", cursive;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--dark-accent);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--light-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.feature-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark-accent);
+}
+
+.screenshots {
+    padding: 4rem 0;
+    background-color: var(--light-gray);
+}
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.screenshot {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.screenshot:hover {
+    transform: scale(1.05);
+}
+
+.screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cta {
+    padding: 5rem 0;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        var(--secondary) 0%,
+        var(--primary) 100%
+    );
+    color: var(--white);
+}
+
+.cta-title {
+    font-family: "Handlee", cursive;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-text {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+}
+
+.version-info {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.faq-item {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--dark-accent);
+    cursor: pointer;
+    position: relative;
+}
+
+.faq-question i {
+    margin-right: 0.8rem;
+    color: var(--primary);
+}
+
+.faq-question::after {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding-left: 2.2rem;
+    color: var(--dark);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-link {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--primary);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    margin-bottom: 1rem;
+}
+
+.privacy-links {
+    font-size: 0.8rem;
+}
+
+.privacy-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.privacy-links a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Polaroid Animation */
+.polaroid-container {
+    perspective: 1000px;
+    margin: 2rem 0;
+}
+
+.polaroid {
+    width: 280px;
+    height: 340px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 15px 15px 60px 15px;
+    display: inline-block;
+    transform: rotate(-5deg);
+    transition: all 0.5s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) translateY(-10px);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.polaroid p {
+    font-family: "Handlee", cursive;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+@keyframes float {
+    0% {
+        transform: rotate(-5deg) translateY(0px);
+    }
+    50% {
+        transform: rotate(-3deg) translateY(-10px);
+    }
+    100% {
+        transform: rotate(-5deg) translateY(0px);
+    }
+}
+
+/* Dispositivos móveis */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .features-grid,
+    .screenshots-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .polaroid {
+        width: 240px;
+        height: 300px;
+    }
+
+    .polaroid img {
+        height: 210px;
+    }
+
+    .cta-title {
+        font-size: 1.8rem;
+    }
+
+    .faq-question {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .screenshots-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Animações adicionais */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Contador de Downloads */
+.download-counter {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--white);
+    opacity: 0.9;
+    animation: fadeIn 1s ease-in 1s both;
+}
+
+.download-counter i {
+    margin-right: 0.5rem;
+    color: var(--accent);
+}
+
+/* Botão desativado */
+.download-btn.disabled {
+    background-color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.download-btn.disabled:hover {
+    background-color: #888;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Melhorias para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    .polaroid {
+        animation: none;
+    }
+
+    .fade-in,
+    .slide-up {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .feature-card:hover,
+    .screenshot:hover,
+    .faq-item:hover,
+    .download-btn:hover {
+        transform: none;
+    }
+}
+
+/* Melhorias para modo escuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-bg: #212529;
+        --light-gray: #343a40;
+        --dark: #f8f9fa;
+        --white: #343a40;
+    }
+
+    body {
+        color: #f8f9fa;
+    }
+
+    .feature-card,
+    .faq-item {
+        background-color: #343a40;
+    }
+
+    .feature-title,
+    .section-title {
+        color: var(--primary);
+    }
+
+    .polaroid {
+        background-color: #f8f9fa;
+    }
+
+    .polaroid p {
+        color: #212529;
+    }
+}
